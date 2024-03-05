@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import FormCreator from "./components/FormCreator";
+import Form from "./components/Form";
+import { Route, Routes } from "react-router-dom";
+import { createContext, useState } from "react";
+
+export const DataProvider = createContext({});
 
 function App() {
+  const [formJson, setFormJson] = useState([]);
+  const [type, setType] = useState("");
+  console.log(formJson);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DataProvider.Provider value={{ formJson, setFormJson, type, setType }}>
+      <Routes>
+        <Route path="/form" element={<Form />} />
+        <Route path="/" element={<FormCreator />} />
+      </Routes>
+    </DataProvider.Provider>
   );
 }
 
