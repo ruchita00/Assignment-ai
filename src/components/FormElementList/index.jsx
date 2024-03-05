@@ -45,7 +45,7 @@ const FormElementList = (props) => {
           <span>{item.label}</span>
           <span
             onClick={(e) => handleDelete(item)}
-            style={{ cursor: "pointer" }}
+            style={{ cursor: "pointer", color: "red" }}
           >
             <i class="fa-solid fa-trash"></i>
           </span>
