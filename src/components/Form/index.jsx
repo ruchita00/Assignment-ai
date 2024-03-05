@@ -1,11 +1,10 @@
 import React, { useContext, useState } from "react";
 import { DataProvider } from "../../App";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./index.css";
 
 const Form = () => {
   const { formJson } = useContext(DataProvider);
-  const navigate = useNavigate();
   const [formFields, setFormFields] = useState(formJson || []);
 
   const handleLabelChange = (index, e) => {
@@ -88,7 +87,6 @@ const Form = () => {
               <div>
                 <input
                   className="checkbox"
-                  // style={{ margin: "5px" }}
                   type="checkbox"
                   id={item.label}
                   name={field.name}

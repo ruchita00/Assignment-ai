@@ -7,7 +7,6 @@ import { DataProvider } from "../../App";
 
 const FormCreator = () => {
   const { setType, formJson } = useContext(DataProvider);
-
   const [formElementList, setFormElementList] = useState([...formJson]);
 
   const handleSelect = (e) => {
